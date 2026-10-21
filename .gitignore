@@ -4,6 +4,10 @@ dist/
 dist-ssr/
 .auto-import.json
 
+# 本地打好的部署包
+publish/
+*.zip
+
 # 后端运行文件（含数据库密码，请勿提交）
 BackEnd/config.json
 BackEnd/*.exe
@@ -21,7 +25,7 @@ FrontEnd/qq.json
 FrontEnd/tsc.log.err
 
 # 本地调试脚本与测试页
-FrontEnd/public/e2e-login.html
+FrontEnd/scripts/e2e-login.html
 FrontEnd/scripts/probe.mjs
 FrontEnd/scripts/shot.mjs
 FrontEnd/scripts/shot-one.mjs

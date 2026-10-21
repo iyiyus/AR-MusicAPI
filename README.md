@@ -6,6 +6,8 @@
 
 仓库地址：<https://github.com/iyiyus/AR-MusicAPI>
 
+部署文档：[DEPLOY.md](./DEPLOY.md)（宝塔面板 + Nginx + MySQL 单机部署）
+
 ---
 
 ## 功能特性
