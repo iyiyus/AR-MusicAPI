@@ -1,0 +1,23 @@
+{
+  "server": {
+    "port": 8080,
+    "mode": "debug"
+  },
+  "database": {
+    "host": "127.0.0.1",
+    "port": 3306,
+    "user": "root",
+    "password": "your-password",
+    "name": "music_admin",
+    "charset": "utf8mb4"
+  },
+  "jwt": {
+    "secret": "please-change-this-secret",
+    "expire_hours": 24,
+    "refresh_hours": 168
+  },
+  "admin": {
+    "default_username": "admin",
+    "default_password": "admin123"
+  }
+}
