@@ -4,9 +4,9 @@
 
 对外提供统一的点歌接口，支持 QQ 音乐、网易云音乐、酷狗音乐、汽水音乐；内置管理后台，可管理 Cookie 池、查看调用日志与运行数据，并直接在后台播放解析结果（含逐行滚动歌词）。
 
-仓库地址：<https://github.com/iyiyus/AR-MusicAPI>
-
-部署文档：[DEPLOY.md](./DEPLOY.md)（宝塔面板 + Nginx + MySQL 单机部署）
+> 仓库：<https://github.com/iyiyus/AR-MusicAPI>
+>
+> 部署：[宝塔部署文档（DEPLOY.md）](./DEPLOY.md) ｜ [下载部署包（Releases）](https://github.com/iyiyus/AR-MusicAPI/releases/latest)
 
 ---
 
@@ -50,11 +50,23 @@ music/
     └── src/utils/             # 工具函数（歌词解析等）
 ```
 
+## 生产部署
+
+服务器不用装 Go / Node，直接用已编译好的部署包：
+
+1. 下载 [`ar-musicapi-linux-amd64.zip`](https://github.com/iyiyus/AR-MusicAPI/releases/latest/download/ar-musicapi-linux-amd64.zip)
+2. 上传到 `/www/wwwroot/<你的域名>/` 解压，得到 `api/`、`db/`、`web/` 三个目录
+3. 按 **[宝塔部署文档 DEPLOY.md](./DEPLOY.md)** 操作：建库导表 → 改 `config.json` → 加守护进程 → 建站点 → 整段替换 Nginx 配置 → 登录后台
+
+单域名即可跑通，`/api` 与 `/uploads` 由 Nginx 反代到 `127.0.0.1:8080`；站点根目录指向 `web/`，`config.json` 不在网站根目录内。
+
 ## 快速开始
+
+以下为源码开发/自行构建的方式。
 
 ### 环境要求
 
-- Go 1.22+
+- Go 1.26+
 - MySQL 8.0+
 - Node.js 20.19+、pnpm 8+
 
